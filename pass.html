@@ -1,43 +1,58 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>First html program with Java script </title>
+        <title>First html program with java script</title>
     </head>
+ <h1>Pass phrase by satishreddy gundlapally</h1>
 <body>
-   
 
-<h2>Hidden things by Satishreddy gundlapally</h2>
-
+<h2>Getting input</h2>
 
 <form>
-    <label for="form1_age">What is your age </label>
-    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+   
+    <label for="form1_pwd">Enter the secret phrase</label>
+    <input value = "Let me in" type ="password" id="form1_pwd" name="form1_pwd" autofocus> <br> 
+    
+    <label for="form1_guess">Enter a phrase</label>
+    <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
 
-    <label for="form1_nick">What is your nickname </label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+    <p id ="result" > Result </p>
 
-    <input type="button" onclick="resolveForm()" value="Get values from form">
+    
+    <input type="button" onclick="processPhrase()" value="Check the phrase">
+
 </form>
 
 
-<p id="result">This text will be replaced </p>
-
+<p id="guessresult" >Results will be displayed </p>
 
 <script> 
 
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
+var correct = 0
+var wrong = 0
+
+
+function processPhrase(){
     
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
+    console.log("Getting guess values")
+    secret = document.getElementById("form1_pwd").value
+    guess = document.getElementById("form1_guess").value
+    confirmed = confirm("Are these the secret word and guess values? "+secret+" and "+guess)
+    
+    out = document.getElementById("guessresult")
+    if(secret==guess){
+        correct++;
+        out.innerHTML = "Access allowed ! Count of Corrects = "+correct+ 
+        "\nCount of Wrongs = "+wrong
     } else {
-        out.innerHTML = "Values were not confirmed"
+        wrong++;
+        out.innerHTML = "Access denied ! Count of Corrects = "+correct+ 
+        "\nCount of Wrongs = "+wrong
     }
+
+
 }
+
 </script>
 
 </body>
