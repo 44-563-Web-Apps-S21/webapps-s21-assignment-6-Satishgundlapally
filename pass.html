@@ -9,6 +9,19 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style>
+    h1{
+       background-color: blue;
+       color: whitesmoke;
+   }
+   h2{
+       background-color: green;
+       color: ivory;
+   }
+   p{
+       color: red;
+   }
+</style> 
 
     </head>
  <h1>Pass phrase by satishreddy gundlapally</h1>
@@ -36,11 +49,8 @@
 <p id="guessresult" >Results will be not  played </p>
 
 <script> 
-
 var correct = 0
 var wrong = 0
-
-
 function processPhrase(){
     
     console.log("Getting guess values")
@@ -57,23 +67,18 @@ function processPhrase(){
         wrong++;
         out.innerHTML = "Access denied ! Count of Corrects = "+correct+ 
         "\nCount of Wrongs = "+wrong
-    }
-
-
+ }
 }
-
 </script>
  <br>
 
 <div class="container">
 <img src="cheetah.jpg" height="200" width="200" onclick="newImage()" id="animalimage">
  <script>
-    
     var usingImage=1;
     function newImage(){
     switch(usingImage){
-       
-                 case 1:
+       case 1:
                     document.getElementById("animalimage").src="Girrafe.jpg";
                      usingImage=2;
                      break;
